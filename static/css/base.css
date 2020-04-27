@@ -1,0 +1,20 @@
+.navigation_logo{
+    width:80px;
+    padding: 0px;
+}
+
+body{
+    background: #f3f3f3;
+}
+
+.main{
+    background: #ffffff;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.page-title{
+    text-align: center;
+}
