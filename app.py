@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    filename = 'cache_data/interface/alarm_mes_all.json'
+    filename = 'cache_data/interface/alarm_mes.json'
     with open(filename, 'r', encoding='UTF-8') as f:
         aa = json.load(f)
     alarmitems = aa['alarm_mes_all']
@@ -39,7 +39,7 @@ def COCTboard():
         with open("cache_data/interface/pltdata.json", "w") as f:
             json.dump(pltdata_dict, f)
 
-        filename = 'cache_data/interface/alarm_mes_all.json'
+        filename = 'cache_data/interface/alarm_mes.json'
         with open(filename, 'r', encoding='UTF-8') as f:
             aa = json.load(f)
         alarmitems = aa['alarm_mes_%s'%pltdata]

@@ -57,7 +57,7 @@ class myCOCT(object):
         for i in range(15):
             data1 = opts.MarkPointItem(name="数据异常", coord=[warning_xaxis[i], warning_yaxis[i]], value='warning')
             data2.append(data1)
-
+        data2.append(opts.MarkPointItem(name="局部放电",type_="max", value='warning'))
 
         # c = (
         #     Line()
@@ -176,8 +176,8 @@ class myCOCT(object):
 
     def Pie_alarmTitle() -> Pie:
 
-        x_data = ["局部放电"]
-        y_data = [2]
+        x_data = ["局部放电","数据异常"]
+        y_data = [1,15]
         data_pair = [list(z) for z in zip(x_data, y_data)]
         data_pair.sort(key=lambda x: x[1])
 
