@@ -1,7 +1,10 @@
 .form-container{
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
-    text-align: right;
+    text-align: center;
 }
 
+.page-title{
+    text-align: center;
+}
 

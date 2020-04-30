@@ -1,95 +1,110 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+{% extends 'home_base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>home</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
+{% block title %}
+alarm_CT_home
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/test.css') }}">
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
+{% endblock %}
 
-</head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url_for("index") }}">LOGO</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">换流变告警</a></li>
-                    <li><a href="#">叶片分析</a></li>
-                    <li><a href="#">场景分析案例</a></li>
-                    <li><a href="{{ url_for("model_manage") }}">模型管理</a></li>
-                </ul>
-                <!-- <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </form> -->
-            </div>
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+                <li id="btn"><a href="#">运行管理</a></li>
+                <li id="btn1"><a href="#">数据管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">系统管理</a></li>
+            </ul>
         </div>
-    </nav>
+        <div class="sidenav" id="run">
+            <ul class="nav nav-sidebar">
+                <li>换流变压器</li>
+                <li>8111B</li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8111B-A") }}">8111B-A相</a></li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8111B-B") }}">8111B-B相</a></li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8111B-C") }}">8111B-C相</a></li>
+                <li>8112B</li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8112B-A") }}">8112B-A相</a></li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8112B-B") }}">8112B-B相</a></li>
+                <li><a href="{{ url_for("COCTboard",pltdata="8112B-C") }}">8112B-C相</a></li>
+            </ul>
+        </div>
+        <div class="sidenav" id="data">
+            <ul class="nav nav-sidebar">
+                <li>换流变压器</li>
+                <li>8111B</li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8111B-A") }}">8111B-A相</a></li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8111B-B") }}">8111B-B相</a></li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8111B-C") }}">8111B-C相</a></li>
+                <li>8112B</li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8112B-A") }}">8112B-A相</a></li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8112B-B") }}">8112B-B相</a></li>
+                <li><a href="{{ url_for("Data_analysis",titlename="8112B-C") }}">8112B-C相</a></li>
+            </ul>
+        </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
-                <ul class="nav nav-sidebar">
-                    <li><a href="#">换流变压器</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">8111B <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for("COCTboard",pltdata="8111B-A") }}">8111B-A相</a></li>
-                            <li><a href="{{ url_for("COCTboard",pltdata="8111B-B") }}">8111B-B相</a></li>
-                            <li><a href="{{ url_for("COCTboard",pltdata="8111B-C") }}">8111B-C相</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">8112B <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for("COCTboard",pltdata="8112B-A") }}">8112B-A相</a></li>
-                            <li><a href="{{ url_for("COCTboard",pltdata="8112B-B") }}">8112B-B相</a></li>
-                            <li><a href="{{ url_for("COCTboard",pltdata="8112B-C") }}">8112B-C相</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h2 class="page-header">换流变压器分布</h2>
 
-                <div class="row placeholders">
-                    <div class="col-xs-12">
-                        <img class="img-responsive center-block" src="{{ url_for('static',filename='images/timg.jpg') }}" alt="Alarm of CT">
-                        <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive" alt="Responsive image"> -->
-                        <!-- <h4>Label</h4>
-                        <span class="text-muted">Something else</span> -->
-                    </div>
+
+        <!-- 主内容 -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+            <div class="col-xs-9">
+                <div id="Map-CT" style="width: 800px;height: 500px;">
+                    <script>
+                        $(
+                            function () {
+                                var chart = echarts.init(document.getElementById('Map-CT'), 'white', {renderer: 'canvas'});
+                                $.ajax({
+                                    type: "GET",
+                                    url: "{{ url_for('map_CT') }}",
+                                    dataType: 'json',
+                                    success: function (result) {
+                                        chart.setOption(result);
+                                    }
+                                });
+                            }
+                        )
+                    </script>
                 </div>
+{#                <div style="width: 800px;height: 300px;">换流变电站map图</div>#}
 
-                <div class="col-xs-12 col-sm-6">
-                    <h2 class="sub-header">换流变监测告警统计</h2>
-                    <div id="pie-alarmPosition" style="width:500px; height:500px;">
+                <div class="table-responsive">
+                    <table class="table" id="table-request">
+                        <thead>
+                            <tr>
+                                <th data-field="alarmNO">告警编号</th>
+                                <th data-field="alarmTitle">告警名称</th>
+                                <th data-field="alarmlevel" class="level">严重程度</th>
+                                <th data-field="alarmTime">告警时间</th>
+                                <th data-field="alarmDetails">告警详情</th>
+                                <th data-field="alarmState">告警状态</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="row placeholders">
+                    <div style="height: 300px;width: 300px;">
+                        <img src="./timg.jpg" class="img-responsive center-block">
+                    </div>
+{#                    <h2 class="sub-header">换流变监测告警统计</h2>#}
+                    <div id="pie-alarmPosition" style="width:450px; height:450px;">
                         <script>
                             $(
                                 function () {
                                     var chart = echarts.init(document.getElementById('pie-alarmPosition'), 'white', {renderer: 'canvas'});
                                     $.ajax({
                                         type: "GET",
-                                        url: "http://127.0.0.1:5000/Pie_alarmPosition",
+                                        url: "{{ url_for('get_pie_alarmPosition') }}",
                                         dataType: 'json',
                                         success: function (result) {
                                             chart.setOption(result);
@@ -100,44 +115,68 @@
                         </script>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                    <h2 class="sub-header">换流变告警信息</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>告警编号</th>
-                                    <th>告警部位</th>
-                                    <th>告警等级</th>
-                                    <th>告警时间</th>
-                                    <th>告警详情</th>
-                                    <th>告警状态</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for alarmitem in alarmitems %}
-                                    <tr>
-                                        <td>{{ alarmitem.alarmNO }}</td>
-                                        <td>{{ alarmitem.alarmPosition }}</td>
-                                        <td>{{ alarmitem.alarmlevel }}</td>
-                                        <td>{{ alarmitem.alarmTime }}</td>
-                                        <td>{{ alarmitem.alarmDetails }}</td>
-                                        <td>{{ alarmitem.alarmState }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
             </div>
+
+
         </div>
     </div>
+</div>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.16.0/bootstrap-table.min.js"></script>
 
-</html>
+<script>
+    $('#btn').on('click', function () {
+        $('#run').toggle()
+    })
+    $('#btn1').on('click', function () {
+        $('#data').toggle()
+    })
+</script>
+<script type="text/javascript">
+    function getJson() {
+        $.ajax({
+            type: "get",
+            url: "{{ url_for('get_alarm_home') }}",
+            success: function (data) {
+                console.log(data)
+                for (var i = 0; i < data.length; i++) {
+                    switch (data[i].alarmlevel) {
+                        case '1':
+                            data[i].alarmlevel = '★☆☆☆☆'
+                            break;
+                        case '2':
+                            data[i].alarmlevel = '★★☆☆☆'
+                            break;
+                        case '3':
+                            data[i].alarmlevel = '★★★☆☆'
+                            break;
+                        case '4':
+                            data[i].alarmlevel = '★★★★☆'
+                            break;
+                        case '5':
+                            data[i].alarmlevel = '★★★★★'
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                $('#table-request').bootstrapTable({
+                    data: data, //datalist 即为需要的数据
+                    dataType: 'json',
+                    pagination: true,
+                    pageSize: 5,
+                    pageList: [5],
+                    data_locale: "zh-US", //转换中文 但是没有什么用处
+                });
+            }
+        })
+    }
+    getJson()
+</script>
+{% endblock %}

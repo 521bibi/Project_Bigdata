@@ -3,7 +3,7 @@
 		{
 		  "alarmNO": "1001",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "轻微",
+		  "alarmlevel": "2",
 		  "alarmTime": "2018-03-15 08:55:24",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -11,7 +11,7 @@
 		{
 		  "alarmNO": "1002",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 07:08:05",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -19,7 +19,7 @@
 		{
 		  "alarmNO": "1003",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 08:08:08",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -27,7 +27,7 @@
 		{
 		  "alarmNO": "1004",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 09:08:11",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -35,7 +35,7 @@
 		{
 		  "alarmNO": "1005",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 10:08:14",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -43,7 +43,7 @@
 		{
 		  "alarmNO": "1006",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 11:08:16",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -51,7 +51,7 @@
 		{
 		  "alarmNO": "1007",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 12:08:19",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -59,7 +59,7 @@
 		{
 		  "alarmNO": "1008",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 13:08:22",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -67,7 +67,7 @@
 		{
 		  "alarmNO": "1009",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 14:08:25",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -75,7 +75,7 @@
 		{
 		  "alarmNO": "1010",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 15:08:29",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -83,7 +83,7 @@
 		{
 		  "alarmNO": "1011",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 16:08:32",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -91,7 +91,7 @@
 		{
 		  "alarmNO": "1012",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 17:08:34",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -99,7 +99,7 @@
 		{
 		  "alarmNO": "1013",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 18:08:37",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -107,7 +107,7 @@
 		{
 		  "alarmNO": "1014",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 19:08:40",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -115,7 +115,7 @@
 		{
 		  "alarmNO": "1015",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 20:08:43",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -123,7 +123,7 @@
 		{
 		  "alarmNO": "1016",
 		  "alarmPosition": "8111B-A相",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 21:08:45",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -131,7 +131,7 @@
 		{
 		  "alarmNO": "1017",
 		  "alarmPosition": "8111B-B相",
-		  "alarmlevel": "小",
+		  "alarmlevel": "3",
 		  "alarmTime": "2018-02-28 00:05",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"		
@@ -144,7 +144,7 @@
 		{
 		  "alarmNO": "1001",
 		  "alarmTitle": "局部放电",
-		  "alarmlevel": "轻微",
+		  "alarmlevel": "2",
 		  "alarmTime": "2018-03-15 08:55:24",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -152,7 +152,7 @@
 		{
 		  "alarmNO": "1002",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 07:08:05",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -160,7 +160,7 @@
 		{
 		  "alarmNO": "1003",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 08:08:08",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -168,7 +168,7 @@
 		{
 		  "alarmNO": "1004",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 09:08:11",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -176,7 +176,7 @@
 		{
 		  "alarmNO": "1005",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 10:08:14",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -184,7 +184,7 @@
 		{
 		  "alarmNO": "1006",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 11:08:16",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -192,7 +192,7 @@
 		{
 		  "alarmNO": "1007",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 12:08:19",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -200,7 +200,7 @@
 		{
 		  "alarmNO": "1008",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 13:08:22",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -208,7 +208,7 @@
 		{
 		  "alarmNO": "1009",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 14:08:25",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -216,7 +216,7 @@
 		{
 		  "alarmNO": "1010",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 15:08:29",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -224,7 +224,7 @@
 		{
 		  "alarmNO": "1011",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 16:08:32",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -232,7 +232,7 @@
 		{
 		  "alarmNO": "1012",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 17:08:34",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -240,7 +240,7 @@
 		{
 		  "alarmNO": "1013",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 18:08:37",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -248,7 +248,7 @@
 		{
 		  "alarmNO": "1014",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 19:08:40",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -256,7 +256,7 @@
 		{
 		  "alarmNO": "1015",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 20:08:43",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -264,7 +264,7 @@
 		{
 		  "alarmNO": "1016",
 		  "alarmTitle": "数据异常",
-		  "alarmlevel": "严重",
+		  "alarmlevel": "4",
 		  "alarmTime": "2018-03-22 21:08:45",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"
@@ -275,7 +275,7 @@
 		{
 		  "alarmNO": "1001",
 		  "alarmTitle": "局部放电",
-		  "alarmlevel": "小",
+		  "alarmlevel": "3",
 		  "alarmTime": "2018-02-27 00:05",
 		  "alarmDetails": "换流变8111B铁芯A相接地电流数据异常，出现局部放电现象",
 		  "alarmState": "已处理"		

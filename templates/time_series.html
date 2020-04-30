@@ -1,51 +1,76 @@
-{% extends 'base.html' %}
+{% extends 'home_base.html' %}
 
 {% block title %}
-智能分析
+model_train_first
 {% endblock %}
 
 {% block head %}
-{#    <link rel="stylesheet" href="{{ url_for('static',filename='css/time_series.css') }}">#}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/test.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/time_series.css') }}">
 
-    <style>
-    button a{
-        color: white;
-    }
-    </style>
-
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
 {% endblock %}
 
 {% block main %}
-<h3 class="page-title">智能分析</h3>
-<form action="" method="POST">
-    <div class="form-container">
-        <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">数据类型 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-              </ul>
-        </li>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="文件夹" name="file_name" style="width:200px;">
-            <td>Model:</td>
-            <td><select id="mymodel" name="mymodel">
-                <option>KMeans</option>
-                <option>LSTM</option>
-                <option>404</option>
-                </select>
-            </td>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="{{ url_for("time_series") }}">模型训练</a></li>
+                <li><a href="#">数据管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">系统管理</a></li>
+            </ul>
         </div>
-        <div class="form-group">
-            <textarea rows="8" class="form-control" placeholder="" name="content"></textarea>
+
+
+
+        <!-- 主内容 -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+            <div style="width:60%;height:750px;background-color: #fff;margin:auto auto;color: black;">
+                <h3 class="page-title" style="text-align:center;">模型训练</h3>
+                <form action="" method="POST">
+                    <div class="form-container">
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">数据类型 <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                              </ul>
+                        </li>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="文件夹" name="file_name" style="width:200px;">
+                            <td>Model:</td>
+                            <td><select id="mymodel" name="mymodel">
+                                <option>KMeans</option>
+                                <option>LSTM</option>
+                                <option>404</option>
+                                </select>
+                            </td>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="8" class="form-control" placeholder="" name="content"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary ">分析</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <button class="btn btn-primary "><a href="{{ url_for('index') }}">取消</a></button>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary ">分析</button>
-        </div>
+
     </div>
-</form>
-<div class="form-group">
-    <button class="btn btn-primary "><a href="{{ url_for('index') }}">取消</a></button>
 </div>
+
+
 {% endblock %}
+
+
+

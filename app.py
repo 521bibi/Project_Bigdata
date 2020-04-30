@@ -1,8 +1,9 @@
-from flask import Flask,render_template,request,redirect,url_for,g
+from flask import Flask,render_template,request,redirect,url_for,jsonify
 import json
 from scatter3d import AA
 from LSTMboard import myLSTM
 from COCTboard import myCOCT
+from data_for_json import mydata2json
 from subprocess import Popen
 import os
 app = Flask(__name__)
@@ -18,18 +19,31 @@ def index():
 
     return render_template('alarm_CT_home.html',alarmitems=alarmitems)
 
+@app.route('/Model_manage/',methods=['GET','POST'])
+def model_manage():
+    if request.method == 'GET':
+        return render_template('Model_manage.html')
+    else:
+        return redirect(url_for('alarm_CT_home.html'))
+
+"""alarm_CT_home"""
+@app.route('/Map_CT/')
+def map_CT():
+    c = myCOCT.Map_CT()
+    return c.dump_options_with_quotes()
+
+@app.route('/get_alarm_home')
+def get_alarm_home():
+    aa = mydata2json.CThome_json()
+    return jsonify(aa)
+
 @app.route('/Pie_alarmPosition/')
 def get_pie_alarmPosition():
     c = myCOCT.Pie_alarmPosition()
     return c.dump_options_with_quotes()
 
-@app.route('/model_manage/',methods=['GET','POST'])
-def model_manage():
-    if request.method == 'GET':
-        return render_template('index.html')
-    else:
-        return redirect(url_for('alarm_CT_home.html'))
 
+"""COCTboard"""
 @app.route('/COCTboard/',methods=['GET','POST'])
 def COCTboard():
     if request.method == 'GET':
@@ -39,14 +53,14 @@ def COCTboard():
         with open("cache_data/interface/pltdata.json", "w") as f:
             json.dump(pltdata_dict, f)
 
-        filename = 'cache_data/interface/alarm_mes.json'
-        with open(filename, 'r', encoding='UTF-8') as f:
-            aa = json.load(f)
-        alarmitems = aa['alarm_mes_%s'%pltdata]
+        # filename = 'cache_data/interface/alarm_mes.json'
+        # with open(filename, 'r', encoding='UTF-8') as f:
+        #     aa = json.load(f)
+        # alarmitems = aa['alarm_mes_%s'%pltdata]
 
         title = '%s'%pltdata+'相'
 
-        return render_template('COCTboard.html',title=title,alarmitems=alarmitems)
+        return render_template('COCTboard.html',title=title)
     else:
         return redirect(url_for('alarm_CT_home.html'))
 
@@ -60,6 +74,31 @@ def get_pie_alarmTitle():
     c = myCOCT.Pie_alarmTitle()
     return c.dump_options_with_quotes()
 
+@app.route('/COCTboard/get_alarm_data')
+def get_alarm_data():
+    aa = mydata2json.CTrm_json()
+    return jsonify(aa)
+
+"""Data_analysis"""
+@app.route('/Data_analysis/',methods=['GET','POST'])
+def Data_analysis():
+    if request.method == 'GET':
+
+        titlename = request.args.get('titlename')
+
+        title = '%s'%titlename+'相'
+
+        return render_template('Data_analysis.html',title=title)
+    else:
+        return redirect(url_for('alarm_CT_home.html'))
+
+@app.route('/Data_analysis/get_original_data')
+def get_original_data():
+    aa = mydata2json.DA_original_data()
+    return jsonify(aa)
+
+
+"""Model_manage"""
 @app.route('/time_series/',methods=['GET','POST'])
 def time_series():
     if request.method == 'GET':
@@ -84,7 +123,7 @@ def time_series():
         if Model_name == 'KMeans':
             return redirect(url_for('KMeans'))
         elif Model_name == 'LSTM':
-            return redirect(url_for('scatter3d'))
+            return redirect(url_for('LSTMboard'))
         else:
             return render_template('404.html')
 

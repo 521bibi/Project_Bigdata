@@ -1,55 +1,84 @@
-{% extends 'base.html' %}
+{% extends 'home_base.html' %}
 
 {% block title %}
-时序分析LSTMboard
+model_train_KMeans
 {% endblock %}
 
 {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/test.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/time_series.css') }}">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
 {% endblock %}
 
 {% block main %}
-<h3 class="page-title">时序分析LSTMboard</h3>
-<form action="" method="POST">
-    <div class="form-container">
-        <div class="form-group">
-            <div id="lineloss" style="width:800px; height:400px;"></div>
-            <script>
-                $(
-                    function () {
-                        var chart = echarts.init(document.getElementById('lineloss'), 'white', {renderer: 'canvas'});
-                        $.ajax({
-                            type: "GET",
-                            url: "http://127.0.0.1:5000/LSTMboard/lineChart",
-                            dataType: 'json',
-                            success: function (result) {
-                                chart.setOption(result);
-                            }
-                        });
-                    }
-                )
-            </script>
-            <div id="linelstm" style="width:1000px; height:600px;"></div>
-            <script>
-                $(
-                    function () {
-                        var chart = echarts.init(document.getElementById('linelstm'), 'white', {renderer: 'canvas'});
-                        $.ajax({
-                            type: "GET",
-                            url: "http://127.0.0.1:5000/LSTMboard/barChart",
-                            dataType: 'json',
-                            success: function (result) {
-                                chart.setOption(result);
-                            }
-                        });
-                    }
-                )
-            </script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="{{ url_for("time_series") }}">模型训练</a></li>
+                <li><a href="#">数据管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">系统管理</a></li>
+            </ul>
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary ">返回首页</button>
+
+
+
+        <!-- 主内容 -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+            <div style="width:60%;height:1100px;background-color: #fff;margin:auto auto;color: black;">
+                <h3 class="page-title" style="text-align:center;">LSTM时序分析</h3>
+                <form action="" method="POST">
+                    <div class="form-container">
+                        <div class="form-group">
+                            <div id="lineloss" style="width:800px; height:400px;"></div>
+                            <script>
+                                $(
+                                    function () {
+                                        var chart = echarts.init(document.getElementById('lineloss'), 'white', {renderer: 'canvas'});
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "http://127.0.0.1:5000/LSTMboard/lineChart",
+                                            dataType: 'json',
+                                            success: function (result) {
+                                                chart.setOption(result);
+                                            }
+                                        });
+                                    }
+                                )
+                            </script>
+                            <div id="linelstm" style="width:800px; height:600px;"></div>
+                            <script>
+                                $(
+                                    function () {
+                                        var chart = echarts.init(document.getElementById('linelstm'), 'white', {renderer: 'canvas'});
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "http://127.0.0.1:5000/LSTMboard/barChart",
+                                            dataType: 'json',
+                                            success: function (result) {
+                                                chart.setOption(result);
+                                            }
+                                        });
+                                    }
+                                )
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary ">返回首页</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
-</form>
+</div>
+
+
 {% endblock %}
+

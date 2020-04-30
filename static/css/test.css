@@ -1,0 +1,186 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+   * Global add-ons
+   */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+   * Top navigation
+   * Hide default border to remove 1px line.
+   */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+   * Sidebar
+   */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px;
+  /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar>li>a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-sidebar>.active>a,
+.nav-sidebar>.active>a:hover,
+.nav-sidebar>.active>a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+   * Main content
+   */
+
+.main {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.main .page-header {
+  margin-top: 0;
+}
+
+body {
+  color: #fff;
+  background-color: #15457D;
+}
+
+.login{
+  float: right;
+}
+.login>li>a{
+  font-size: 18px !important
+}
+.navbar-inverse {
+  background-color: #0B315B;
+  box-shadow: 3px 3px 3px #000;
+}
+
+.sidebar {
+  background-color: #0B315B;
+  border-right: 0;
+  box-shadow: 3px 3px 3px #000;
+}
+.row{
+  margin-top: 30px;
+}
+.main {
+  background-color: #15457D;
+}
+
+
+table {
+  background-color: #245C9D;
+}
+
+.table-hover>tbody>tr:hover {
+  background-color: #245C9D;
+}
+
+.pagination-detail {
+  display: none;
+}
+
+
+.container-fluid {
+  height: 80px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  font-size: 22px;
+}
+
+.navbar-nav {
+  margin-left: 450px;
+  margin-top: 8px;
+}
+
+.fixed-table-loading {
+  display: none;
+}
+
+.sidenav {
+  position: absolute;
+  top: 80px;
+  left: 110px;
+  z-index: 9999;
+  background: #0B315B;
+  height: 500px;
+  width: 200px;
+  box-shadow: 3px 3px 5px #000;
+  display: none;
+}
+
+.sidenav .nav-sidebar {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+  background-color: #0B315B;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+
+.level {
+  color: red;
+}
+
+.th-inner {
+  color: #fff
+}
