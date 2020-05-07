@@ -276,5 +276,91 @@ class myCOCT(object):
         )
         return c
 
+    def Line_DA_origin() -> Line:
+        pltdata_name = json_reader.pltdata()
+        pltdata_file = "current%s" % pltdata_name + ".xlsx"
+        file = 'cache_data/out/%s' % (pltdata_file)
+        rebuilt_read = pd.read_excel(file, header=None)
+        COCT_xaxis = rebuilt_read.iloc[1:, 0].values
+        yaxis_A = rebuilt_read.iloc[1:, 2].values
+
+        df_warning = rebuilt_read.loc[rebuilt_read[1] == 1]
+        warning_xaxis = df_warning[0].values
+        warning_yaxis = df_warning[2].values
+
+        data2 = []
+        for i in range(15):
+            data1 = opts.MarkPointItem(name="数据异常", coord=[warning_xaxis[i], warning_yaxis[i]], value='warning')
+            data2.append(data1)
+        data2.append(opts.MarkPointItem(name="局部放电",type_="max", value='warning'))
+
+        c = (
+            # Line(init_opts=opts.InitOpts(bg_color=JsCode(background_color_js)))
+            Line()
+                .add_xaxis(xaxis_data=COCT_xaxis)
+                .add_yaxis(
+                series_name="监测时间",
+                y_axis=yaxis_A,
+                # markpoint_opts=opts.MarkPointOpts(
+                #     data=data2
+                # ),
+                is_smooth=True,
+                is_symbol_show=False,
+                # symbol="circle",
+                # symbol_size=6,
+                linestyle_opts=opts.LineStyleOpts(color='#eb64fb'),
+                # label_opts=opts.LabelOpts(is_show=False, position="top", color="white"),
+                # itemstyle_opts=opts.ItemStyleOpts(
+                #     color="red", border_color="#fff", border_width=3
+                # ),
+                # tooltip_opts=opts.TooltipOpts(is_show=False),
+                # areastyle_opts=opts.AreaStyleOpts(color=JsCode(area_color_js), opacity=1),
+            )
+
+                .set_global_opts(
+                title_opts=opts.TitleOpts(
+                    title="%s" % pltdata_name + "相",
+                    pos_bottom="5%",
+                    pos_left="center",
+                    title_textstyle_opts=opts.TextStyleOpts(color="black", font_size=16),
+                ),
+                xaxis_opts=opts.AxisOpts(
+                    type_="category",
+                    boundary_gap=False,
+                    axislabel_opts=opts.LabelOpts(margin=30, color="##3fbbff0d"),
+                    axisline_opts=opts.AxisLineOpts(is_show=False),
+                    axistick_opts=opts.AxisTickOpts(
+                        is_show=True,
+                        length=25,
+                        linestyle_opts=opts.LineStyleOpts(color="#3fbbff0d"),
+                    ),
+                    splitline_opts=opts.SplitLineOpts(
+                        is_show=True, linestyle_opts=opts.LineStyleOpts(color="#3fbbff0d")
+                    ),
+                ),
+                yaxis_opts=opts.AxisOpts(
+                    type_="value",
+                    # min_="min",
+                    # position="right",
+                    axislabel_opts=opts.LabelOpts(margin=20, color="black"),
+                    axisline_opts=opts.AxisLineOpts(
+                        linestyle_opts=opts.LineStyleOpts(width=2, color="black")
+                    ),
+                    axistick_opts=opts.AxisTickOpts(
+                        is_show=True,
+                        length=15,
+                        linestyle_opts=opts.LineStyleOpts(color="black"),
+                    ),
+                    splitline_opts=opts.SplitLineOpts(
+                        is_show=True, linestyle_opts=opts.LineStyleOpts(color="black")
+                    ),
+                ),
+                legend_opts=opts.LegendOpts(is_show=False),
+            )
+            # .render("line_color_with_js_func.html")
+        )
+        return c
+
+
 # c = myCOCT.Map_CT()
 # c.render("map3d_with_scatter3d.html")

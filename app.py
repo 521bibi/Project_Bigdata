@@ -92,6 +92,11 @@ def Data_analysis():
     else:
         return redirect(url_for('alarm_CT_home.html'))
 
+@app.route('/Data_analysis/lineChart/')
+def get_Line_DA_chart():
+    c = myCOCT.Line_DA_origin()
+    return c.dump_options_with_quotes()
+
 @app.route('/Data_analysis/get_original_data')
 def get_original_data():
     aa = mydata2json.DA_original_data()
@@ -120,6 +125,7 @@ def time_series():
         # p.communicate()
         os.system("python main.py")
         print("启动OK")
+
         if Model_name == 'KMeans':
             return redirect(url_for('KMeans'))
         elif Model_name == 'LSTM':

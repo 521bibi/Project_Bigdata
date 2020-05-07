@@ -58,7 +58,22 @@ Data_analysis
             <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
                 <h2 class="sub-header">{{ title }}</h2>
                 <div class="col-xs-6">
-                    <div style="width: 700px;height: 350px;">时序曲线图</div>
+                    <div id="lineDA" style="width: 700px;height: 350px;">时序曲线图</div>
+                    <script>
+                        $(
+                            function () {
+                                var chart = echarts.init(document.getElementById('lineDA'), 'white', {renderer: 'canvas'});
+                                $.ajax({
+                                    type: "GET",
+                                    url: "http://127.0.0.1:5000/Data_analysis/lineChart",
+                                    dataType: 'json',
+                                    success: function (result) {
+                                        chart.setOption(result);
+                                    }
+                                });
+                            }
+                        )
+                    </script>
                     <div id="container_1" style="height: 300px"></div>
 
                 </div>
